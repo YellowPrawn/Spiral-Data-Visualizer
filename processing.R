@@ -3,7 +3,7 @@ library(here)
 library(lubridate)
 library(dplyr)
 library(ggplot2)
-
+library(gganimate)
 
 outline_color <- "#D97C86"
 fill_color <- "#F0C0C1"
@@ -59,11 +59,14 @@ make_plot <- function(province) {
     theme(plot.background = element_rect(color = NA, fill = "white"),
           panel.grid.major.x = element_line(color = "grey70", size = 0.8, linetype = "dotted"),
           panel.grid.minor.x = element_line(color = "grey70", size = 0.8, linetype = "dotted"),
-          axis.text.x = element_text(color = base_grey, size = 10, hjust = 0.5),) +
+          axis.text.x = element_text(color = base_grey, size = 30, hjust = 0.5),) +
     annotate("text", label = paste0(year_annotations$year, "\u2192"), x = year_annotations$x,
              y = year_annotations$y,
-             size = 3, vjust = -0.6, hjust = 0.15)
-  ggsave(paste(province, ".png", sep = ""), width = 10, height = 10, path = "./src/images")
+             size = 6, vjust = -0.6, hjust = 0.15) +
+    transition_reveal(day_of_year)
+  
+  animate(data_plot, duration = 5, fps = 20, width = 1000, height = 1000, renderer = gifski_renderer())
+  anim_save(paste(province, ".gif", sep = ""), path = "./data")
 }
 
 for (province in provinces) {
