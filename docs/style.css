@@ -7,12 +7,13 @@
 
 img {
 	display: none;
+	width: 60%;
 }
 
 .title {
 	max-width: 40%;
 	font-size: 6vw;
-	margin: 0;
+	margin-bottom: 10px;
 }
 
 #welcome .title {
@@ -52,7 +53,7 @@ img {
 
 #welcome {
 	position: absolute;
-	top: 20%;
+	top: 10%;
 	z-index: 0;
 }
 
