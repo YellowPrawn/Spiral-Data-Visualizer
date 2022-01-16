@@ -25,6 +25,7 @@
 	right: 10%;
 	-ms-transform: translateY(-50%);
   	transform: translateY(-50%);
+  	z-index: 1;
 }
 
 #welcome {
@@ -32,6 +33,7 @@
 	top: 50%;
 	-ms-transform: translateY(-50%);
   	transform: translateY(-50%);
+  	z-index: 0;
 }
 
 #BC path:hover {
