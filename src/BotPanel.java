@@ -13,7 +13,7 @@ public class BotPanel extends JPanel {
         setSize(panelSize, panelSize);
         BufferedImage img = null;
         try {
-            image = ImageIO.read(getClass().getResource("/images/spiral.jpg"));
+            image = ImageIO.read(getClass().getResource("/images/resizedPlot.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
