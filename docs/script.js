@@ -27,12 +27,12 @@ var selectedState = function(state) {
 			break;
 		case 'MB':
 			$('g').css("fill", "#d3d3d3");
-			$('#' + state).css("fill", "#ffff8b");
+			$('#' + state).css("fill", "#f8de6f");
 			stateData(state);
 			break;
 		case 'ON':
 			$('g').css("fill", "#d3d3d3");
-			$('#' + state).css("fill", "#f8de6f");
+			$('#' + state).css("fill", "#e0a53f");
 			stateData(state);
 			break;
 		case 'QC':
