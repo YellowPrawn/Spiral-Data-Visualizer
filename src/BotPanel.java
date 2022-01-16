@@ -5,10 +5,10 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 public class BotPanel extends JPanel {
-    // needs the spiral image
     int panelSize = 700;
     Image image;
 
+    // this class basically just displays the spiral image
     public BotPanel() {
         setSize(panelSize, panelSize);
         BufferedImage img = null;

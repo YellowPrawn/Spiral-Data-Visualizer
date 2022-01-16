@@ -2,25 +2,26 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+// The main window that holds all the panels
 public class TheSpiralGui {
     JFrame window;
-    JLayeredPane jLayeredPane;
-    BotPanel bottomSpiralPanel;
-    MidPanel middleCirclePanel;
-    TopPanel topAxesPanel;
-    JPanel visContainer;
-    JPanel introPanel;
+    JLayeredPane jLayeredPane; // used to layer the diff parts of the graph (circle, spiral, axes)
+    BotPanel bottomSpiralPanel; // panel of the spiral image
+    MidPanel middleCirclePanel; // panel of the expanding circle
+    TopPanel topAxesPanel; // panel of the axes
+    JPanel visContainer; // panel that contains all of the panels
+    JPanel introPanel; // starting panel
 
     JButton start;
     JTextArea intro;
 
-    CardLayout cardLayout;
+    CardLayout cardLayout; // layout that lets you switch b/w panels
 
     int windowSize = 700;
     String introText = "This is a Data Visualizer of COVID cases in BC!";
 
     public TheSpiralGui() {
+        // initializing everything
         window = new JFrame();
         jLayeredPane = new JLayeredPane();
         bottomSpiralPanel = new BotPanel();
@@ -32,11 +33,13 @@ public class TheSpiralGui {
 
         cardLayout = new CardLayout();
 
+        // rest of the methods to set up the window
         setUpFrame();
         setUpContainer();
         setUpPanels();
     }
 
+    // sets up the JFrame and adds the panel container to it (visContainer)
     public void setUpFrame() {
         window.setSize(windowSize, windowSize);
         window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -44,18 +47,21 @@ public class TheSpiralGui {
         window.add(visContainer);
     }
 
+    // sets up the visCOntainr by adding the other panels to it and giving it the card layout
     public void setUpContainer() {
         visContainer.setLayout(cardLayout);
         visContainer.add(introPanel, "intro");
         visContainer.add(jLayeredPane, "layeredPanel");
-        cardLayout.show(visContainer, "intro");
+        cardLayout.show(visContainer, "intro"); // switch to introPanel by key
     }
 
+    // sets up other two panels
     public void setUpPanels() {
         setUpIntroPanel();
         setUpLayeredPanel();
     }
 
+    // adds the intro text and start button -- on click it will show the layered panel that contains the graph
     public void setUpIntroPanel() {
         intro = new JTextArea(introText);
         introPanel.add(start);
@@ -70,6 +76,7 @@ public class TheSpiralGui {
         });
     }
 
+    // DONT change please, this orders the panels so they overlap correctly
     public void setUpLayeredPanel() {
         jLayeredPane.add(bottomSpiralPanel, 0, 0);
         jLayeredPane.add(middleCirclePanel, 1, 0);

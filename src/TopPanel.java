@@ -3,8 +3,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+// top panel containing the axes
 public class TopPanel extends JPanel {
-    MidPanel midPanel;
     int panelSize = 700;
     JTextField jan;
     JTextField apr;
@@ -12,10 +12,10 @@ public class TopPanel extends JPanel {
     JTextField oct;
 
     public TopPanel() {
-        midPanel = new MidPanel();
         setUpPanel();
     }
 
+    // sets up the panel
     public void setUpPanel() {
         setSize(panelSize, panelSize);
         setLayout(null);
@@ -24,6 +24,7 @@ public class TopPanel extends JPanel {
         setUpTexts();
     }
 
+    // sets up the axes labels
     public void setUpTexts() {
         jan = new JTextField("January");
         apr = new JTextField("April");
@@ -41,6 +42,7 @@ public class TopPanel extends JPanel {
 
     }
 
+    // sets up a timer to redraw the axes
     public void setUpTimer() {
         Timer t = new Timer(10, new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
@@ -50,6 +52,7 @@ public class TopPanel extends JPanel {
         t.start();
     }
 
+    // the following two methods draw the lines of the axes
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
