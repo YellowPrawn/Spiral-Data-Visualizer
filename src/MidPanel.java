@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 public class MidPanel extends JPanel {
 
     int panelSize = 700;
-    int radius = panelSize/7;
+    int radius = 0;
     int center = panelSize/2;
 
     public MidPanel() {
@@ -22,12 +22,18 @@ public class MidPanel extends JPanel {
                     if (x != radius && y != radius) {
                         g.drawRect(x, y, 1, 1);
                     }
-                    if (x < (center - radius/2) || x > (center + radius/2) || y < (center - radius/2) || y > (center + radius/2)) {
-                        g.setColor(new Color(0,0,0));
-                    } else {
+//                    if (x < (center - radius/2) || x > (center + radius/2) || y < (center - radius/2) || y > (center + radius/2)) {
+//                        g.setColor(new Color(0,0,0));
+//                    } else {
+//                        g.setColor(new Color(0,0,0, 0));
+//                    }
+                    if (Math.sqrt(((x - panelSize/2)*(x - panelSize/2))+((y - panelSize/2)*(y - panelSize/2))) < radius/2) {
                         g.setColor(new Color(0,0,0, 0));
+                    } else {
+                        g.setColor(new Color(255,255,255));
                     }
                 }
+
             }
         }
 
@@ -39,9 +45,9 @@ public class MidPanel extends JPanel {
         setOpaque(false);
     }
 
-    // increments circle every 1 ms by 1
+    // increments circle every 3 ms by 1
     public void setUpTimer() {
-        Timer t = new Timer(30, new ActionListener() {
+        Timer t = new Timer(15, new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 incrementRadius();
                 repaint();
@@ -50,10 +56,10 @@ public class MidPanel extends JPanel {
         t.start();
     }
 
-    // increments the radius by 1 each time
+    // increments the radius by 3 each time
     public void incrementRadius() {
         if (radius <= panelSize) {
-            radius+= 1;
+            radius+= 3;
         }
     }
 
