@@ -1,17 +1,19 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class MidPanel extends JPanel {
 
+    public static boolean stop;
     int panelSize = 700;
     int radius = 0;
     int center = panelSize/2;
+    TheSpiralGui gui;
 
-    public MidPanel() {
+    public MidPanel(TheSpiralGui gui) {
+        stop = false;
         setUpPanel();
         setUpTimer();
+        this.gui = gui;
     }
         @Override
         protected void paintComponent(Graphics g) {
@@ -33,8 +35,8 @@ public class MidPanel extends JPanel {
                         g.setColor(new Color(255,255,255));
                     }
                 }
-
             }
+            stop = true;
         }
 
     // sets up the panel and its button
@@ -45,12 +47,13 @@ public class MidPanel extends JPanel {
         setOpaque(false);
     }
 
-    // increments circle every 3 ms by 1
+    // increments circle constantly
     public void setUpTimer() {
-        Timer t = new Timer(15, new ActionListener() {
-            public void actionPerformed(ActionEvent ae) {
+        Timer t = new Timer(0, ae -> {
+            if(!stop) {
                 incrementRadius();
                 repaint();
+                gui.recordFrame();
             }
         });
         t.start();
