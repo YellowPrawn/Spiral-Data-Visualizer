@@ -1,6 +1,7 @@
 
 var startAnimation = function() {
-	$("#welcome").fadeOut(1000, shiftLeft($('#map')))
+	$("#welcome").css('opacity', '0');
+	shiftLeft($('#map'));
 };
 
 var shiftLeft = function(thing) {
@@ -9,6 +10,7 @@ var shiftLeft = function(thing) {
 
 var selectedState = function(state) {
 	$('#info p').css('opacity', '0');
+	$('#info img').css('display', 'none');
 	switch(state) {
 		case 'BC':
 			$('g').css("fill", "#d3d3d3");
@@ -79,5 +81,6 @@ var selectedState = function(state) {
 var stateData = function(state) {
 	var stateColor = $('#' + state).css('fill');
 	$('#info .title').css('color', stateColor);
-	$('#info > .' + state + ' *').css('opacity', '1');
+	$('#info > .' + state + ' *').css('opacity', '1')
+	$('#info > .' + state + ' img').css('display', 'inline');
 }
