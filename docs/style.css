@@ -1,0 +1,138 @@
+* {
+	font-family: 'DM Sans', sans-serif;
+	font-weight: 700;
+	box-sizing: border-box;
+}
+
+#title {
+	font-size: 8vw;
+	margin: 0;
+  	margin-top: 2px;
+  	margin-bottom: 2px;	
+}
+
+#subtitle {
+	font-size: 4vw;
+	margin: 0;
+  	margin-top: 2px;
+  	margin-bottom: 2px;	
+}
+
+#map {
+	width: 40%;
+	position: absolute;
+	top: 50%;
+	right: 10%;
+	-ms-transform: translateY(-50%);
+  	transform: translateY(-50%);
+  	z-index: 1;
+}
+
+#welcome {
+	position: absolute;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+  	transform: translateY(-50%);
+  	z-index: 0;
+}
+
+#BC path:hover {
+	fill: #b5e3ff;
+}
+
+#BC path:active {
+	fill: #7accfe;
+}
+
+#AB path:hover {
+	fill: #89f5e9;
+}
+
+#AB path:active {
+	fill: #01d8c0;
+}
+
+#QC path:hover {
+	fill: #ffc4a8;
+}
+
+#QC path:active {
+	fill: #fc9b6e;
+}
+
+#ON path:hover {
+	fill: #fff2bd;
+}
+
+#ON path:active {
+	fill: #f8de6f;
+}
+
+#MB path:hover {
+	fill: #ffffd9;
+}
+
+#MB path:active {
+	fill: #ffff8b;
+}
+
+#SK path:hover {
+	fill: #b3ffdb;
+}
+
+#SK path:active {
+	fill: #49f9a6;
+}
+
+#NB path:hover {
+	fill: #ff9ea9;
+}
+
+#NB path:active {
+	fill: #ff6273;
+}
+
+#NS path:hover {
+	fill: #ff9cdc;
+}
+
+#NS path:active {
+	fill: #fe3bba;
+}
+
+#NT path:hover {
+	fill: #d3b0ff;
+}
+
+#NT path:active {
+	fill: #a768f5;
+}
+
+#NL path:hover {
+	fill: #fabef0;
+}
+
+#NL path:active {
+	fill: #f58de4;
+}
+
+#NU path:hover {
+	fill: #e4c4ff;
+}
+
+#NU path:active {
+	fill: #d09cfe;
+}
+
+#YT path:hover {
+	fill: #a1a1ff;
+}
+
+#YT path:active {
+	fill: #6565f1;
+}
+
+
+html {
+	margin: 10%;
+}
