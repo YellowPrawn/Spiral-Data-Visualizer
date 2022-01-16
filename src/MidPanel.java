@@ -36,7 +36,7 @@ public class MidPanel extends JPanel {
 
     // increments circle every 1 ms by 1
     public void setUpTimer() {
-        Timer t = new Timer(1, new ActionListener() {
+        Timer t = new Timer(30, new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 incrementRadius();
                 repaint();
@@ -52,9 +52,11 @@ public class MidPanel extends JPanel {
         drawCircle(g);
     }
 
-    // increments the radius by 5 each time
+    // increments the radius by 1 each time
     public void incrementRadius() {
-        radius+= 1;
+        if (radius <= panelSize) {
+            radius+= 1;
+        }
     }
 
     // draws the circle
