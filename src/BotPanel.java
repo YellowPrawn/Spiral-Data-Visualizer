@@ -3,17 +3,18 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.Objects;
 
 public class BotPanel extends JPanel {
     int panelSize = 700;
     Image image;
 
     // this class basically just displays the spiral image
-    public BotPanel() {
+    public BotPanel(String file) {
         setSize(panelSize, panelSize);
         BufferedImage img = null;
         try {
-            image = ImageIO.read(getClass().getResource("/images/BritishColumbia_plot.png"));
+            image = ImageIO.read(Objects.requireNonNull(getClass().getResource("/images/" + file + ".png")));
         } catch (IOException e) {
             e.printStackTrace();
         }

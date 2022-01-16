@@ -20,11 +20,11 @@ public class TheSpiralGui {
     int windowSize = 700;
     String introText = "This is a Data Visualizer of COVID cases in BC!";
 
-    public TheSpiralGui() {
+    public TheSpiralGui(String province) {
         // initializing everything
         window = new JFrame();
         jLayeredPane = new JLayeredPane();
-        bottomSpiralPanel = new BotPanel();
+        bottomSpiralPanel = new BotPanel(province);
         middleCirclePanel = new MidPanel();
         topAxesPanel = new TopPanel();
         visContainer = new JPanel();

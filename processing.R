@@ -63,7 +63,7 @@ make_plot <- function(province) {
     annotate("text", label = paste0(year_annotations$year, "\u2192"), x = year_annotations$x,
              y = year_annotations$y,
              size = 3, vjust = -0.6, hjust = 0.15)
-  ggsave(province, width = 10, height = 10, device = "png", path = "./data")
+  ggsave(paste(province, ".png", sep = ""), width = 10, height = 10, path = "./src/images")
 }
 
 for (province in provinces) {
