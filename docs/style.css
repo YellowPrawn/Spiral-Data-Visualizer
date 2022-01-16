@@ -2,38 +2,58 @@
 	font-family: 'DM Sans', sans-serif;
 	font-weight: 700;
 	box-sizing: border-box;
+	transition: opacity 1s ease;
 }
 
-#title {
-	font-size: 8vw;
-	margin: 0;
-  	margin-top: 2px;
-  	margin-bottom: 2px;	
+img {
+	display: none;
 }
 
-#subtitle {
-	font-size: 4vw;
+.title {
+	max-width: 40%;
+	font-size: 6vw;
 	margin: 0;
-  	margin-top: 2px;
-  	margin-bottom: 2px;	
+}
+
+#welcome .title {
+	color: #585957
+}
+
+.subtitle {
+	position: absolute;
+	font-size: 3vw;
+	margin: 0;
+}
+
+#info div{
+	display: block;
+	left: 53%;
+	right: 10%;
+	max-width: 40%;
+	top: 5%;
+	position: absolute;
+}
+
+#info p {
+	opacity: 0;
 }
 
 #map {
 	width: 40%;
 	position: absolute;
-	top: 50%;
+	top: 20%;
 	right: 10%;
-	-ms-transform: translateY(-50%);
-  	transform: translateY(-50%);
-  	z-index: 1;
+	z-index: 1;
+}
+
+#map {
+	transition: transform 1.5s ease;
 }
 
 #welcome {
 	position: absolute;
-	top: 50%;
-	-ms-transform: translateY(-50%);
-  	transform: translateY(-50%);
-  	z-index: 0;
+	top: 20%;
+	z-index: 0;
 }
 
 #BC path:hover {
@@ -60,20 +80,20 @@
 	fill: #fc9b6e;
 }
 
-#ON path:hover {
+#MB path:hover {
 	fill: #fff2bd;
 }
 
-#ON path:active {
+#MB path:active {
 	fill: #f8de6f;
 }
 
-#MB path:hover {
-	fill: #ffffd9;
+#ON path:hover {
+	fill: #dcb678;
 }
 
-#MB path:active {
-	fill: #ffff8b;
+#ON path:active {
+	fill: #e0a53f;
 }
 
 #SK path:hover {
@@ -132,6 +152,53 @@
 	fill: #6565f1;
 }
 
+.BC {
+	z-index: 0;
+}
+
+.AB {
+	z-index: -1;
+}
+
+.SK {
+	z-index: -2;
+}
+
+.MB {
+	z-index: -3;
+}
+
+.QC {
+	z-index: -4;
+}
+
+.ON {
+	z-index: -5;
+}
+
+.NL {
+	z-index: -6;
+}
+
+.NS {
+	z-index: -7;
+}
+
+.YT {
+	z-index: -8;
+}
+
+.NT {
+	z-index: -9;
+}
+
+.NB {
+	z-index: -10;
+}
+
+.NU {
+	z-index: -11;
+}
 
 html {
 	margin: 10%;
