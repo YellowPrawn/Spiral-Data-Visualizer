@@ -2,20 +2,38 @@
 	font-family: 'DM Sans', sans-serif;
 	font-weight: 700;
 	box-sizing: border-box;
+	transition: opacity 1s ease;
 }
 
-#title {
-	font-size: 8vw;
+.title {
+	font-size: 6vw;
 	margin: 0;
   	margin-top: 2px;
   	margin-bottom: 2px;	
 }
 
-#subtitle {
-	font-size: 4vw;
+.subtitle {
+	position: relative;
+	font-size: 3vw;
 	margin: 0;
   	margin-top: 2px;
   	margin-bottom: 2px;	
+}
+
+#info {
+	left: 53%;
+	right: 10%;
+	width: 35%;
+	top: 10%;
+	position: absolute;
+}
+
+#info .title {
+	position: absolute;
+}
+
+#info p {
+	opacity: 0;
 }
 
 #map {
