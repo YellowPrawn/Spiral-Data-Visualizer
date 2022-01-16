@@ -17,8 +17,7 @@ public class BotPanel extends JPanel {
         setSize(panelSize, panelSize);
         BufferedImage img = null;
         try {
-            // image = ImageIO.read(Objects.requireNonNull(getClass().getResource("/images/" + file + ".png")));
-            image = ImageIO.read(Objects.requireNonNull(getClass().getResource("/images/Alberta.png")));
+            image = ImageIO.read(Objects.requireNonNull(getClass().getResource("/images/" + file + ".png")));
         } catch (IOException e) {
             e.printStackTrace();
         }
