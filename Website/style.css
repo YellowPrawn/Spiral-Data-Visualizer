@@ -34,83 +34,99 @@
 }
 
 #BC path:hover {
-	fill: #ad7cfc;
+	fill: #b5e3ff;
 }
 
 #BC path:active {
-	fill: #7a34eb;
+	fill: #7accfe;
 }
 
 #AB path:hover {
-	fill: #7c91fc;
+	fill: #89f5e9;
 }
 
 #AB path:active {
-	fill: #4262ff;
+	fill: #01d8c0;
 }
 
 #QC path:hover {
-	fill: #77cff2;
+	fill: #ffc4a8;
 }
 
 #QC path:active {
-	fill: #f9b26c;
+	fill: #fc9b6e;
 }
 
 #ON path:hover {
-	fill: #a1f7e9;
+	fill: #fff2bd;
 }
 
 #ON path:active {
-	fill: #46b8a5;
+	fill: #f8de6f;
 }
 
 #MB path:hover {
-	fill: ;
+	fill: #ffffd9;
 }
 
 #MB path:active {
-	fill: ;
+	fill: #ffff8b;
 }
 
 #SK path:hover {
-	fill: ;
+	fill: #b3ffdb;
 }
 
 #SK path:active {
-	fill: ;
+	fill: #49f9a6;
 }
 
 #NB path:hover {
-	fill: ;
+	fill: #ff9ea9;
 }
 
 #NB path:active {
-	fill: ;
+	fill: #ff6273;
 }
 
 #NS path:hover {
-	fill: ;
+	fill: #ff9cdc;
 }
 
 #NS path:active {
-	fill: ;
-}
-
-#PE path:hover {
-	fill: ;
-}
-
-#PE path:active {
-	fill: ;
+	fill: #fe3bba;
 }
 
 #NT path:hover {
-	fill: ;
+	fill: #d3b0ff;
 }
 
 #NT path:active {
-	fill: ;
+	fill: #a768f5;
+}
+
+#NL path:hover {
+	fill: #fabef0;
+}
+
+#NL path:active {
+	fill: #f58de4;
+}
+
+#NU path:hover {
+	fill: #e4c4ff;
+}
+
+#NU path:active {
+	fill: #d09cfe;
+}
+
+#YT path:hover {
+	fill: #a1a1ff;
+}
+
+#YT path:active {
+	fill: #6565f1;
 }
 
 
