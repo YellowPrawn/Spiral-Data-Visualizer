@@ -21,18 +21,18 @@
 #map {
 	width: 40%;
 	position: absolute;
-	top: 50%;
+	top: 20%;
 	right: 10%;
-	-ms-transform: translateY(-50%);
-  	transform: translateY(-50%);
   	z-index: 1;
+}
+
+#map {
+	transition: transform 1.5s ease;
 }
 
 #welcome {
 	position: absolute;
-	top: 50%;
-	-ms-transform: translateY(-50%);
-  	transform: translateY(-50%);
+	top: 20%;
   	z-index: 0;
 }
 

@@ -1,5 +1,5 @@
 
-
+/*
 $(document).ready(function(){
 
 	// jQuery methods go here...
@@ -9,8 +9,22 @@ $(document).ready(function(){
 		});
 	});
 
-	$('#map').click(function() {
-		$('#welcome').fadeOut();
+	$("object").click(function() {
+		$("#welcome").fadeOut();
 	});
 
-});
+});*/
+
+var startAnimation = function() {
+	$("#welcome").fadeOut(1000, shiftLeft($('#map')))
+};
+
+var shiftLeft = function(thing) {
+	thing.css("transform", "translateX(-95%)");
+}
+
+/*
+var dataAppear = function() {
+
+}
+*/
