@@ -36,7 +36,7 @@ public class MidPanel extends JPanel {
                     }
                 }
             }
-            stop = true;
+            //stop = true;
         }
 
     // sets up the panel and its button
@@ -49,7 +49,7 @@ public class MidPanel extends JPanel {
 
     // increments circle constantly
     public void setUpTimer() {
-        Timer t = new Timer(0, ae -> {
+        Timer t = new Timer(15, ae -> {
             if(!stop) {
                 incrementRadius();
                 repaint();
