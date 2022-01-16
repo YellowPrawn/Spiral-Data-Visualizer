@@ -7,31 +7,36 @@ public class MidPanel extends JPanel {
 
     int panelSize = 700;
     int radius = panelSize/7;
-    JButton start;
+    int center = panelSize/2;
 
     public MidPanel() {
-        start = new JButton("Start Spiral!");
         setUpPanel();
+        setUpTimer();
     }
+        @Override
+        protected void paintComponent(Graphics g) {
+            super.paintComponent(g);
+            drawCircle(g);
+            for (int x = 0; x <= panelSize; x++) {
+                for (int y=0; y<= panelSize; y++) {
+                    if (x != radius && y != radius) {
+                        g.drawRect(x, y, 1, 1);
+                    }
+                    if (x < (center - radius/2) || x > (center + radius/2) || y < (center - radius/2) || y > (center + radius/2)) {
+                        g.setColor(new Color(0,0,0));
+                    } else {
+                        g.setColor(new Color(0,0,0, 0));
+                    }
+                }
+            }
+        }
 
     // sets up the panel and its button
     public void setUpPanel() {
         setSize(panelSize, panelSize);
+        setBackground(new Color(0,0,0,0));
         setLayout(null);
         setOpaque(false);
-        setUpButton();
-        add(start);
-        start.setBounds(panelSize - 200, 40, 200, 50);
-    }
-
-    // button on-click sets up the timer to start moving the circle
-    public void setUpButton() {
-        start.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setUpTimer();
-            }
-        });
     }
 
     // increments circle every 1 ms by 1
@@ -43,13 +48,6 @@ public class MidPanel extends JPanel {
             }
         });
         t.start();
-    }
-
-    // draws the circle
-    @Override
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        drawCircle(g);
     }
 
     // increments the radius by 1 each time
